@@ -1,0 +1,124 @@
+{
+  "theme": "light",
+  "archetype": "5 (Jewel & Luxury - Light Variant)",
+  "brand": {
+    "name": "AURUM",
+    "vibe": "Light, airy, refined, editorial, expensive. NET-A-PORTER meets Tiffany & Co."
+  },
+  "colors": {
+    "background": "#faf8f4",
+    "surface": "#ffffff",
+    "surface_secondary": "#e8d5a3",
+    "text_primary": "#1a1a1a",
+    "text_secondary": "#4a4a4a",
+    "accent_gold": "#c9a84c",
+    "accent_champagne": "#e8d5a3",
+    "accent_blush": "#f0d9d0",
+    "border_light": "rgba(201, 168, 76, 0.2)",
+    "border_solid": "#c9a84c"
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond, serif",
+    "body_font": "DM Sans, sans-serif",
+    "h1": "text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter leading-none text-[#1a1a1a]",
+    "h2": "text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#1a1a1a]",
+    "h3": "text-2xl sm:text-3xl font-light text-[#1a1a1a]",
+    "h4": "text-xl sm:text-2xl font-light text-[#1a1a1a]",
+    "body": "text-base leading-relaxed text-[#1a1a1a]/80",
+    "overline": "text-xs tracking-[0.2em] uppercase font-medium text-[#c9a84c]"
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 md:py-32 lg:py-40",
+    "grid_gap": "gap-8 md:gap-12",
+    "border_radius": "rounded-none",
+    "borders": "border border-[#c9a84c]/20"
+  },
+  "surfaces_and_shadows": {
+    "glass_header": "backdrop-blur-xl bg-[#faf8f4]/80 border-b border-[#c9a84c]/10",
+    "card_hover": "hover:-translate-y-2 transition-transform duration-500",
+    "soft_shadow": "shadow-[0_20px_40px_-15px_rgba(201,168,76,0.1)]",
+    "grain_overlay": "after:content-[''] after:fixed after:inset-0 after:opacity-[0.03] after:pointer-events-none after:bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')]"
+  },
+  "motion_and_interactions": {
+    "page_load": "staggered fade up using framer-motion",
+    "scroll_reveal": "opacity 0 to 1, y 20 to 0 over 0.8s ease-out",
+    "button_hover": "relative overflow-hidden group hover:bg-[#1a1a1a] hover:text-[#faf8f4] transition-colors duration-300",
+    "product_card_hover": "Add to Cart button slides up from bottom on hover. Image scales up slightly (1.05) over 0.7s ease",
+    "custom_cursor": "Implement a custom cursor using framer-motion: a small solid gold dot (#c9a84c) with a larger, trailing hollow ring."
+  },
+  "components_instructions": {
+    "navigation": "Sticky nav with frosted glass (#faf8f4/80 + blur). Logo AURUM centered. Nav links minimal. Cart icon with absolute positioned badge.",
+    "hero": "Split layout (text left, image right or vice versa). Headline in Cormorant Garamond. Floating animation on the product image. Infinite scrolling marquee strip at the bottom of the section.",
+    "featured_collections": "3-column grid. Large images with category titles overlaid (Rings, Bracelets, Necklaces). Use soft overlays.",
+    "product_grid": "4-column grid. Clean, lots of whitespace. Slide-up 'Add to Cart' button. Heart icon for Wishlist.",
+    "craftsmanship": "Full-width two-column layout. One side editorial image, one side typography-heavy brand story.",
+    "testimonials": "Auto-cycling minimal slider. Gold quote marks. Text large and italicized in Cormorant Garamond.",
+    "instagram_strip": "6 square images in a row. No gaps or 1px gold borders between them.",
+    "newsletter": "Full width banner with champagne background (#e8d5a3). Elegant input field with bottom border only.",
+    "footer": "4 columns. Minimal links. Deep charcoal or cream background.",
+    "admin_dashboard": "Use Shadcn components heavily. Sidebar for navigation. Complex tables for Products, Inventory, Orders. Recharts for revenue/trends analytics. JWT Authentication wrapped in context.",
+    "test_ids": "Ensure all interactive elements have data-testid attributes."
+  },
+  "media": {
+    "hero": {
+      "floating_ring": "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5",
+      "description": "Gold ring on white background, to be animated floating up and down."
+    },
+    "collections": [
+      {
+        "category": "Rings",
+        "url": "https://images.pexels.com/photos/5737277/pexels-photo-5737277.jpeg",
+        "description": "Luxury gold rings"
+      },
+      {
+        "category": "Bracelets",
+        "url": "https://images.unsplash.com/photo-1767249622437-dd837fc5ff3b",
+        "description": "Woman wearing bold jewelry"
+      },
+      {
+        "category": "Necklaces",
+        "url": "https://images.unsplash.com/photo-1773929345739-94db8a4ccd0c",
+        "description": "Delicate gold necklace"
+      }
+    ],
+    "best_sellers": [
+      {
+        "name": "Eternity Diamond Ring",
+        "price": "$1,250",
+        "url": "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8"
+      },
+      {
+        "name": "Classic Ball Studs",
+        "price": "$450",
+        "url": "https://images.unsplash.com/photo-1761479267937-4c5c7a903760"
+      },
+      {
+        "name": "Layered Gold Chain",
+        "price": "$890",
+        "url": "https://images.pexels.com/photos/9489731/pexels-photo-9489731.jpeg"
+      },
+      {
+        "name": "Signature Pendant",
+        "price": "$620",
+        "url": "https://images.pexels.com/photos/26570970/pexels-photo-26570970.jpeg"
+      }
+    ],
+    "craftsmanship": {
+      "url": "https://images.unsplash.com/photo-1608112169461-48616144c894",
+      "description": "Jeweler's hands working on a piece."
+    },
+    "instagram": [
+      "https://images.unsplash.com/photo-1761420570875-b8ca70228e64",
+      "https://images.unsplash.com/photo-1771695828792-112e299755bc",
+      "https://images.unsplash.com/photo-1761475375956-484196fedaae",
+      "https://images.unsplash.com/photo-1770777352898-f0f02bcfb44f",
+      "https://images.unsplash.com/photo-1771091052749-1ab149f9158c",
+      "https://images.unsplash.com/photo-1644613536367-69728d99cad5"
+    ]
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "stroke-width: 1.5, elegant, minimal"
+  }
+}
