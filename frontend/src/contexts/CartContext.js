@@ -53,8 +53,11 @@ export const CartProvider = ({ children }) => {
         { product_id: productId, quantity },
         { withCredentials: true }
       );
-      setCart(response.data);
-      // Store session_id in cookie if needed
+      setCart({
+        items: response.data?.items || [],
+        total: response.data?.total || 0,
+        session_id: response.data?.session_id
+      });
       if (response.data.session_id) {
         document.cookie = `cart_session=${response.data.session_id}; path=/; max-age=604800`;
       }
@@ -71,7 +74,10 @@ export const CartProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.delete(`${API}/api/cart/${productId}`, { withCredentials: true });
-      setCart(response.data);
+      setCart({
+        items: response.data?.items || [],
+        total: response.data?.total || 0
+      });
     } catch (error) {
       console.error('Failed to remove from cart:', error);
     } finally {
@@ -83,7 +89,10 @@ export const CartProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.put(`${API}/api/cart/${productId}?quantity=${quantity}`, {}, { withCredentials: true });
-      setCart(response.data);
+      setCart({
+        items: response.data?.items || [],
+        total: response.data?.total || 0
+      });
     } catch (error) {
       console.error('Failed to update quantity:', error);
     } finally {
@@ -115,8 +124,8 @@ export const CartProvider = ({ children }) => {
     setCart({ items: [], total: 0 });
   };
 
-  const cartCount = cart.items.reduce((sum, item) => sum + item.quantity, 0);
-
+  const cartCount = (cart?.items || []).reduce((sum, item) => sum + (item?.quantity || 0), 0);
+  
   return (
     <CartContext.Provider value={{
       cart,
