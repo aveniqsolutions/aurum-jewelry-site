@@ -16,7 +16,7 @@ export const Products = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(`${API}/api/products?bestseller=true`);
-        setProducts(response.data);
+        setProducts(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.error('Failed to fetch products:', error);
         // Fallback products
@@ -57,7 +57,7 @@ export const Products = () => {
 
   const handleToggleWishlist = (productId) => {
     toggleWishlist(productId);
-    const isInWishlist = wishlist.includes(productId);
+    const isInWishlist = (wishlist || []).includes(productId);
     toast.success(isInWishlist ? 'Removed from wishlist' : 'Added to wishlist', {
       className: 'toast-success',
     });
@@ -127,7 +127,7 @@ export const Products = () => {
                   <Heart 
                     size={18} 
                     className={`transition-all duration-300 ${
-                      wishlist.includes(product.id) 
+                      (wishlist || []).includes(product.id) 
                         ? 'text-[#c9a84c] fill-[#c9a84c] animate-pulse-gold' 
                         : 'text-[#1a1a1a]/60'
                     }`}
