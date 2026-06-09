@@ -22,7 +22,11 @@ export const CartProvider = ({ children }) => {
   const fetchCart = useCallback(async () => {
     try {
       const response = await axios.get(`${API}/api/cart`, { withCredentials: true });
-      setCart(response.data);
+      setCart({
+        items: response.data?.items || [],
+        total: response.data?.total || 0,
+        session_id: response.data?.session_id
+      });
     } catch {
       setCart({ items: [], total: 0 });
     }
